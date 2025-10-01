@@ -29,9 +29,27 @@
     .intro h1{font-size:clamp(28px,4.5vw,48px);line-height:1.02;margin:0}
     .intro p{color:var(--muted);font-size:1.05rem;margin:10px 0 0}
     .cta{display:flex;gap:12px;margin-top:18px}
-    .btn{padding:12px 16px;border-radius:12px;border:0;font-weight:700;cursor:pointer}
+    .btn{
+      padding:12px 16px;
+      border-radius:12px;
+      border:0;
+      font-weight:700;
+      cursor:pointer;
+      display:inline-block;
+      text-decoration:none; /* 👈 quitamos subrayado solo en botones */
+      transition: all 0.25s ease;
+    }
     .btn-primary{background:var(--accent);color:#081126}
+    .btn-primary:hover{
+      transform: scale(1.05);
+      color:#fff;
+    }
     .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+    .btn-ghost:hover{
+      background:var(--accent);
+      color:#fff;
+      transform: scale(1.05);
+    }
     .card{background:var(--card);padding:12px;border-radius:12px}
     .preview{height:320px;border-radius:12px;overflow:hidden;display:flex;align-items:flex-end;background-size:cover;background-position:center}
     .preview .meta{padding:16px;background:linear-gradient(180deg,transparent,rgba(0,0,0,0.55));width:100%}
@@ -75,8 +93,8 @@
           </p>
 
           <div class="cta">
-            <button class="btn btn-primary" onclick="location.href='#portfolio'">Ver portfolio</button>
-            <button class="btn btn-ghost" onclick="location.href='contact.html'">Contratar / Consultar</button>
+            <a class="btn btn-primary" href="galeria.html">Ver portfolio</a>
+            <a class="btn btn-ghost" href="contact.html">Contratar / Consultar</a>
           </div>
         </div>
 
@@ -102,7 +120,7 @@
           <img src="indexphoto/gt3rsalante.jpg" alt="Porsche 911 GT3 RS - delante">
           <img src="indexphoto/gt3rsatras.jpg" alt="Porsche 911 GT3 RS - trasera">
           <img src="indexphoto/m4.jpg" alt="BMW">
-          <img src="indexphoto/diablo.JPG" alt="Lamborghini Diablo">
+          <img src="indexphoto/diablo.jpg" alt="Lamborghini Diablo">
         </div>
       </section>
     </section>
@@ -116,4 +134,3 @@
   </footer>
 </body>
 </html>
-
