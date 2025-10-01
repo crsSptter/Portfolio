@@ -3,7 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contacto — Crs_Sptter</title>
+  <title>Crs_Sptter — Fotografía de Coches</title>
+  <meta name="description" content="Portfolio de fotografía automotriz — imágenes, proyectos y contacto." />
   <link rel="icon" href="indexphoto/logo.jpg" />
   <style>
     :root{
@@ -23,15 +24,46 @@
     .logo img{width:100%;height:100%;object-fit:cover;border-radius:10px}
     nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-weight:600}
     main{flex:1;display:grid;grid-template-columns:1fr;align-items:center;padding:36px 24px}
-    .hero{max-width:800px;margin:0 auto;display:flex;flex-direction:column;gap:22px;padding:28px;border-radius:var(--radius);background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);backdrop-filter: blur(6px)}
-    h1{font-size:clamp(26px,3.5vw,42px);margin:0}
-    p{color:var(--muted);line-height:1.6}
-    .card{background:var(--card);padding:20px;border-radius:12px}
-    .contact-links p{margin:10px 0;font-size:1.05rem}
-    .contact-links a{color:var(--accent);text-decoration:none;font-weight:600}
-    .btn{padding:12px 16px;border-radius:12px;border:0;font-weight:700;cursor:pointer;display:inline-block;margin-top:20px}
-    .btn-primary{background:var(--accent);color:#081126;text-decoration:none}
-    footer{padding:18px 24px;border-top:1px solid rgba(255,255,255,0.02);color:var(--muted);font-size:0.95rem;text-align:center}
+    .hero{max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:22px;padding:28px;border-radius:var(--radius);background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);backdrop-filter: blur(6px)}
+    .hero-grid{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center}
+    .intro h1{font-size:clamp(28px,4.5vw,48px);line-height:1.02;margin:0}
+    .intro p{color:var(--muted);font-size:1.05rem;margin:10px 0 0}
+    .cta{display:flex;gap:12px;margin-top:18px}
+    .btn{
+      padding:12px 16px;
+      border-radius:12px;
+      border:0;
+      font-weight:700;
+      cursor:pointer;
+      display:inline-block;
+      text-decoration:none; /* 👈 quitamos subrayado solo en botones */
+      transition: all 0.25s ease;
+    }
+    .btn-primary{background:var(--accent);color:#081126}
+    .btn-primary:hover{
+      transform: scale(1.05);
+      color:#fff;
+    }
+    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+    .btn-ghost:hover{
+      background:var(--accent);
+      color:#fff;
+      transform: scale(1.05);
+    }
+    .card{background:var(--card);padding:12px;border-radius:12px}
+    .preview{height:320px;border-radius:12px;overflow:hidden;display:flex;align-items:flex-end;background-size:cover;background-position:center}
+    .preview .meta{padding:16px;background:linear-gradient(180deg,transparent,rgba(0,0,0,0.55));width:100%}
+    footer{padding:18px 24px;border-top:1px solid rgba(255,255,255,0.02);color:var(--muted);font-size:0.95rem}
+
+    /* responsive */
+    @media (max-width:900px){
+      .hero-grid{grid-template-columns:1fr;}
+      .preview{height:240px}
+    }
+
+    /* small helper styles for gallery */
+    .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+    .gallery img{width:100%;height:160px;object-fit:cover;border-radius:10px}
   </style>
 </head>
 <body>
@@ -44,28 +76,61 @@
       </div>
     </div>
     <nav>
-      <a href="index.html#portfolio">Portfolio</a>
-      <a href="index.html#about">Sobre mí</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#about">Sobre mí</a>
       <a href="contact.html">Contacto</a>
     </nav>
   </header>
 
   <main>
-    <section class="hero">
-      <h1>Contacto</h1>
-      <p>Si quieres contactarme para una sesión de fotos de tu coche, escríbeme a cualquiera de estas redes:</p>
-      
-      <div class="card contact-links">
-        <p><strong>Email:</strong> <a href="mailto:tu@correo.com">NODISPONIBLE@gmail.com</a></p>
-        <p><strong>Instagram:</strong> <a href="https://instagram.com/crs_sptter" target="_blank">@crs_sptter</a></p>
+    <section class="hero" role="region" aria-label="Presentación principal">
+      <div class="hero-grid">
+        <div class="intro">
+          <h1>Crs_Sptter — Fotografía de coches</h1>
+          <p>
+            Capturo la esencia y la fuerza de los vehículos: líneas, luz y movimiento.
+            Trabajo tanto en exteriores como en estudio, con un enfoque en composiciones limpias y luz dramática.
+          </p>
+
+          <div class="cta">
+            <a class="btn btn-primary" href="galeria.html">Ver portfolio</a>
+            <a class="btn btn-ghost" href="contact.html">Contratar / Consultar</a>
+          </div>
+        </div>
+
+        <aside>
+          <div class="card">
+            <div class="preview" style="background-image: url('indexphoto/mercedesdelante.jpg')">
+              <div class="meta">
+                <div style="font-weight:700">Mercedes AMG</div>
+                <div style="color:var(--muted);font-size:0.9rem;margin-top:4px">Proyecto: Eurocrew 2025</div>
+              </div>
+            </div>
+            <div style="display:flex;gap:8px;margin-top:10px">
+              <div style="flex:1;color:var(--muted);font-size:0.9rem">Último proyecto publicado: Septiembre 2025</div>
+              <div style="font-weight:700">Galería →</div>
+            </div>
+          </div>
+        </aside>
       </div>
 
-      <a href="index.html" class="btn btn-primary">Home</a>
+      <section id="portfolio" style="margin-top:28px">
+        <h2 style="margin:0 0 12px 0">Portfolio</h2>
+        <div class="gallery">
+          <img src="indexphoto/gt3rsalante.jpg" alt="Porsche 911 GT3 RS - delante">
+          <img src="indexphoto/gt3rsatras.jpg" alt="Porsche 911 GT3 RS - trasera">
+          <img src="indexphoto/m4.jpg" alt="BMW">
+          <img src="indexphoto/diablo.jpg" alt="Lamborghini Diablo">
+        </div>
+      </section>
     </section>
   </main>
 
   <footer>
-    © <strong>Crs_Sptter</strong> — Fotografía de coches
+    <div style="max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap">
+      <div>© <strong>Crs_Sptter</strong> — Fotografía de coches</div>
+      <div style="color:var(--muted)">Email: <a href="mailto:tu@correo.com" style="color:inherit;text-decoration:underline">tu@correo.com</a> · Instagram: <a href="https://instagram.com/crs_sptter/" target="_blank" style="color:inherit;text-decoration:underline">@Crs_Sptter</a></div>
+    </div>
   </footer>
 </body>
 </html>
