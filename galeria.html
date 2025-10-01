@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Galería — Crs_Sptter</title>
+  <link rel="icon" href="indexphoto/logo.jpg" />
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --muted:#9aa4b2;
+      --accent:#ff6b35;
+      --glass: rgba(255,255,255,0.04);
+      --radius:16px;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,var(--bg),#071022);color:#e6eef6;min-height:100vh;display:flex;flex-direction:column}
+    header{padding:28px 24px;display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:56px;height:56px;border-radius:10px;overflow:hidden;display:flex;align-items:center;justify-content:center;font-weight:700;color:#081126}
+    .logo img{width:100%;height:100%;object-fit:cover;border-radius:10px}
+    nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-weight:600}
+    main{flex:1;padding:36px 24px;display:flex;flex-direction:column;align-items:center}
+    
+    h1{
+      font-size:clamp(28px,5vw,52px);
+      color:var(--accent);
+      margin:0;
+      text-align:center;
+    }
+    hr{
+      width:120px;
+      border:2px solid var(--accent);
+      margin:12px auto 36px auto;
+      border-radius:4px;
+    }
+
+    .projects{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
+      gap:24px;
+      max-width:1000px;
+      width:100%;
+    }
+    .project-card{
+      background:var(--card);
+      border-radius:12px;
+      overflow:hidden;
+      text-align:center;
+      transition:transform 0.3s ease;
+      cursor:pointer;
+    }
+    .project-card img{
+      width:100%;
+      height:220px;
+      object-fit:cover;
+      transition:transform 0.4s ease;
+    }
+    .project-card:hover img{
+      transform:scale(1.08);
+    }
+    .project-card p{
+      margin:12px 0;
+      font-size:1.1rem;
+      font-weight:600;
+    }
+
+    footer{padding:18px 24px;border-top:1px solid rgba(255,255,255,0.02);color:var(--muted);font-size:0.95rem;text-align:center}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo"><img src="indexphoto/logo.jpg" alt="Logo"></div>
+      <div>
+        <div style="font-weight:700">Crs_Sptter</div>
+        <div style="font-size:0.85rem;color:var(--muted);margin-top:2px">Fotógrafo automotriz</div>
+      </div>
+    </div>
+    <nav>
+      <a href="index.html#portfolio">Portfolio</a>
+      <a href="index.html#about">Sobre mí</a>
+      <a href="contact.html">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>PROYECTOS</h1>
+    <hr />
+
+    <div class="projects">
+      <!-- Proyecto 1 -->
+      <a href="euro25.html" class="project-card">
+        <img src="proyectos/eurocrew.jpg" alt="Eurocrew 2025">
+        <p>Eurocrew 2025</p>
+      </a>
+
+      <!-- Proyecto 2 -->
+      <a href="autopia25.html" class="project-card">
+        <img src="proyectos/autopia.jpg" alt="Autopia 2025">
+        <p>Autopia 2025</p>
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    © <strong>Crs_Sptter</strong> — Fotografía de coches
+  </footer>
+</body>
+</html>
