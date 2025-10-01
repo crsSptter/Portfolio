@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Eurocrew 2025 — Crs_Sptter</title>
+  <link rel="icon" href="indexphoto/logo.jpg" />
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --muted:#9aa4b2;
+      --accent:#ff6b35;
+      --radius:16px;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,var(--bg),#071022);color:#e6eef6;min-height:100vh;display:flex;flex-direction:column}
+    header{padding:28px 24px;display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:56px;height:56px;border-radius:10px;overflow:hidden;display:flex;align-items:center;justify-content:center;font-weight:700;color:#081126}
+    .logo img{width:100%;height:100%;object-fit:cover;border-radius:10px}
+    nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-weight:600}
+    main{flex:1;padding:36px 24px;display:flex;flex-direction:column;align-items:center}
+    
+    h1{
+      font-size:clamp(28px,5vw,52px);
+      color:var(--accent);
+      margin:0;
+      text-align:center;
+    }
+    hr{
+      width:120px;
+      border:2px solid var(--accent);
+      margin:12px auto 36px auto;
+      border-radius:4px;
+    }
+
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:18px;
+      max-width:1300px;
+      width:100%;
+    }
+
+    .gallery img{
+      width:100%;
+      display:block;
+      border:3px solid var(--accent);
+      border-radius:8px;
+      transition:transform 0.3s ease;
+      background:#071022;
+    }
+    .gallery img:hover{
+      transform:scale(1.05);
+    }
+
+    /* fotos cuadradas o verticales */
+    .gallery img{ aspect-ratio: 4/3; object-fit: cover; }
+
+    /* las panorámicas */
+    .wide{ aspect-ratio: 16/9; object-fit: contain; }
+
+    footer{
+      padding:18px 24px;
+      border-top:1px solid rgba(255,255,255,0.02);
+      color:var(--muted);
+      font-size:0.95rem;
+      text-align:center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo"><img src="indexphoto/logo.jpg" alt="Logo"></div>
+      <div>
+        <div style="font-weight:700">Crs_Sptter</div>
+        <div style="font-size:0.85rem;color:var(--muted);margin-top:2px">Fotógrafo automotriz</div>
+      </div>
+    </div>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="galeria.html">Galería</a>
+      <a href="contact.html">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>EUROCREW 2025</h1>
+    <hr />
+
+    <div class="gallery">
+      <img src="proyectos/europhoto25/gt3delante.jpg" alt="Eurocrew 2025 - 1">
+      <img src="proyectos/europhoto25/gt3lado.jpg" alt="Eurocrew 2025 - 2" class="wide">
+      <img src="proyectos/europhoto25/gtr.jpg" alt="Eurocrew 2025 - 3" class="wide">
+      <img src="proyectos/europhoto25/ferrarialante.jpg" alt="Eurocrew 2025 - 4">
+      <img src="proyectos/europhoto25/ferrarilado.jpg" alt="Eurocrew 2025 - 5">
+      <img src="proyectos/europhoto25/m2bocca.jpg" alt="Eurocrew 2025 - 6">
+      <img src="proyectos/europhoto25/m2culo.jpg" alt="Eurocrew 2025 - 7">
+      <img src="proyectos/europhoto25/mercedesdelante.jpg" alt="Eurocrew 2025 - 8">
+      <img src="proyectos/europhoto25/mercedesatras.jpg" alt="Eurocrew 2025 - 9">
+      <img src="proyectos/europhoto25/m4.jpg" alt="Eurocrew 2025 - 10" class="wide">
+      <img src="proyectos/europhoto25/m4amarillo.jpg" alt="Eurocrew 2025 - 11">
+      <img src="proyectos/europhoto25/porsche.jpg" alt="Eurocrew 2025 - 12">
+    </div>
+  </main>
+
+  <footer>
+    © <strong>Crs_Sptter</strong> — Fotografía de coches
+  </footer>
+</body>
+</html>
