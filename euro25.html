@@ -51,6 +51,7 @@
       border-radius:8px;
       transition:transform 0.3s ease;
       background:#071022;
+      cursor:pointer;
     }
     .gallery img:hover{
       transform:scale(1.05);
@@ -68,6 +69,47 @@
       color:var(--muted);
       font-size:0.95rem;
       text-align:center;
+    }
+
+    /* -------- LIGHTBOX -------- */
+    .lightbox{
+      position:fixed;
+      z-index:9999;
+      top:0;left:0;
+      width:100%;height:100%;
+      background:rgba(0,0,0,0.9);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      opacity:0;
+      pointer-events:none;
+      transition: opacity 0.4s ease;
+    }
+    .lightbox img{
+      max-width:90%;
+      max-height:90%;
+      border-radius:12px;
+      border:3px solid var(--accent);
+      transform: scale(0.8);
+      opacity:0;
+      transition: all 0.4s ease;
+    }
+    .lightbox:target{
+      opacity:1;
+      pointer-events:auto;
+    }
+    .lightbox:target img{
+      transform: scale(1);
+      opacity:1;
+    }
+    .close{
+      position:absolute;
+      top:20px;
+      right:30px;
+      font-size:2rem;
+      color:#fff;
+      text-decoration:none;
+      font-weight:bold;
     }
   </style>
 </head>
@@ -90,25 +132,41 @@
   <main>
     <h1>EUROCREW 2025</h1>
     <hr />
-
+  <p style="color:var(--accent); font-size:0.9rem; text-align:center; margin-top:-20px; margin-bottom:28px;">
+    Haz click a una imagen para agrandarla
+  </p>
     <div class="gallery">
-      <img src="proyectos/europhoto25/gt3delante.jpg" alt="Eurocrew 2025 - 1">
-      <img src="proyectos/europhoto25/gt3lado.jpg" alt="Eurocrew 2025 - 2" class="wide">
-      <img src="proyectos/europhoto25/gtr.jpg" alt="Eurocrew 2025 - 3" class="wide">
-      <img src="proyectos/europhoto25/ferrarialante.jpg" alt="Eurocrew 2025 - 4">
-      <img src="proyectos/europhoto25/ferrarilado.jpg" alt="Eurocrew 2025 - 5">
-      <img src="proyectos/europhoto25/m2bocca.jpg" alt="Eurocrew 2025 - 6">
-      <img src="proyectos/europhoto25/m2culo.jpg" alt="Eurocrew 2025 - 7">
-      <img src="proyectos/europhoto25/mercedesdelante.jpg" alt="Eurocrew 2025 - 8">
-      <img src="proyectos/europhoto25/mercedesatras.jpg" alt="Eurocrew 2025 - 9">
-      <img src="proyectos/europhoto25/m4.jpg" alt="Eurocrew 2025 - 10" class="wide">
-      <img src="proyectos/europhoto25/m4amarillo.jpg" alt="Eurocrew 2025 - 11">
-      <img src="proyectos/europhoto25/porsche.jpg" alt="Eurocrew 2025 - 12">
+      <a href="#img1"><img src="proyectos/europhoto25/gt3delante.jpg" alt="Eurocrew 2025 - 1"></a>
+      <a href="#img2"><img src="proyectos/europhoto25/gt3lado.jpg" alt="Eurocrew 2025 - 2" class="wide"></a>
+      <a href="#img3"><img src="proyectos/europhoto25/gtr.jpg" alt="Eurocrew 2025 - 3" class="wide"></a>
+      <a href="#img4"><img src="proyectos/europhoto25/ferrarialante.jpg" alt="Eurocrew 2025 - 4"></a>
+      <a href="#img5"><img src="proyectos/europhoto25/ferrarilado.jpg" alt="Eurocrew 2025 - 5"></a>
+      <a href="#img6"><img src="proyectos/europhoto25/m2bocca.jpg" alt="Eurocrew 2025 - 6"></a>
+      <a href="#img7"><img src="proyectos/europhoto25/m2culo.jpg" alt="Eurocrew 2025 - 7"></a>
+      <a href="#img8"><img src="proyectos/europhoto25/mercedesdelante.jpg" alt="Eurocrew 2025 - 8"></a>
+      <a href="#img9"><img src="proyectos/europhoto25/mercedesatras.jpg" alt="Eurocrew 2025 - 9"></a>
+      <a href="#img10"><img src="proyectos/europhoto25/m4.jpg" alt="Eurocrew 2025 - 10" class="wide"></a>
+      <a href="#img11"><img src="proyectos/europhoto25/m4amarillo.jpg" alt="Eurocrew 2025 - 11"></a>
+      <a href="#img12"><img src="proyectos/europhoto25/porsche.jpg" alt="Eurocrew 2025 - 12"></a>
     </div>
   </main>
 
   <footer>
     © <strong>Crs_Sptter</strong> — Fotografía de coches
   </footer>
+
+  <!-- LIGHTBOX -->
+  <div id="img1" class="lightbox"><a href="#" class="close">&times;</a><img src="proyectos/europhoto25/gt3delante.jpg"></div>
+  <div id="img2" class="lightbox"><a href="#" class="close">&times;</a><img src="proyectos/europhoto25/gt3lado.jpg"></div>
+  <div id="img3" class="lightbox"><a href="#" class="close">&times;</a><img src="proyectos/europhoto25/gtr.jpg"></div>
+  <div id="img4" class="lightbox"><a href="#" class="close">&times;</a><img src="proyectos/europhoto25/ferrarialante.jpg"></div>
+  <div id="img5" class="lightbox"><a href="#" class="close">&times;</a><img src="proyectos/europhoto25/ferrarilado.jpg"></div>
+  <div id="img6" class="lightbox"><a href="#" class="close">&times;</a><img src="proyectos/europhoto25/m2bocca.jpg"></div>
+  <div id="img7" class="lightbox"><a href="#" class="close">&times;</a><img src="proyectos/europhoto25/m2culo.jpg"></div>
+  <div id="img8" class="lightbox"><a href="#" class="close">&times;</a><img src="proyectos/europhoto25/mercedesdelante.jpg"></div>
+  <div id="img9" class="lightbox"><a href="#" class="close">&times;</a><img src="proyectos/europhoto25/mercedesatras.jpg"></div>
+  <div id="img10" class="lightbox"><a href="#" class="close">&times;</a><img src="proyectos/europhoto25/m4.jpg"></div>
+  <div id="img11" class="lightbox"><a href="#" class="close">&times;</a><img src="proyectos/europhoto25/m4amarillo.jpg"></div>
+  <div id="img12" class="lightbox"><a href="#" class="close">&times;</a><img src="proyectos/europhoto25/porsche.jpg"></div>
 </body>
 </html>
