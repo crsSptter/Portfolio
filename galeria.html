@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Galería — Crs_Sptter</title>
+  <link rel="icon" href="indexphoto/logo.jpg" />
+  <style>
+    :root {
+      --bg:#0f1724;
+      --card:#0b1220;
+      --muted:#9aa4b2;
+      --accent:#ff6b35;
+      --radius:16px;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+
+    * { box-sizing:border-box }
+    body {
+      margin:0;
+      background:linear-gradient(180deg,var(--bg),#071022);
+      color:#e6eef6;
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+    }
+
+    header {
+      padding:28px 24px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+    .brand {
+      display:flex;
+      gap:12px;
+      align-items:center;
+    }
+
+    .logo {
+      width:56px;
+      height:56px;
+      border-radius:10px;
+      overflow:hidden;
+    }
+
+    .logo img {
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      border-radius:10px;
+    }
+
+    nav a {
+      color:var(--muted);
+      text-decoration:none;
+      margin-left:18px;
+      font-weight:600;
+    }
+
+    main {
+      flex:1;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      padding:36px 24px;
+    }
+
+    h1 {
+      font-size:clamp(28px,5vw,52px);
+      color:var(--accent);
+      margin:0;
+      text-align:center;
+    }
+
+    hr {
+      width:120px;
+      border:2px solid var(--accent);
+      margin:12px auto 36px auto;
+      border-radius:4px;
+    }
+
+    .brands-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:24px;
+      max-width:1100px;
+      width:100%;
+    }
+
+    .brand-card {
+      background:var(--card);
+      border:3px solid var(--accent);
+      border-radius:var(--radius);
+      overflow:hidden;
+      text-align:center;
+      transition:transform 0.3s ease, box-shadow 0.3s ease;
+      cursor:pointer;
+    }
+
+    .brand-card:hover {
+      transform:translateY(-6px);
+      box-shadow:0 8px 20px rgba(255,107,53,0.25);
+    }
+
+    .brand-card img {
+      width:100%;
+      height:200px;
+      object-fit:contain;
+      background:#0a1322;
+      padding:20px;
+    }
+
+    .brand-card h2 {
+      margin:16px 0;
+      color:var(--accent);
+      font-size:1.4rem;
+    }
+
+    footer {
+      padding:18px 24px;
+      border-top:1px solid rgba(255,255,255,0.05);
+      color:var(--muted);
+      font-size:0.95rem;
+      text-align:center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo"><img src="indexphoto/logo.png" alt="Logo"></div>
+      <div>
+        <div style="font-weight:700">Crs_Sptter</div>
+        <div style="font-size:0.85rem;color:var(--muted);margin-top:2px">Fotógrafo automotriz</div>
+      </div>
+    </div>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="galeria.html">Galería</a>
+      <a href="contact.html">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Galería por marcas</h1>
+    <hr />
+
+    <div class="brands-grid">
+      <a href="ferrari.html" class="brand-card">
+        <img src="proyectos/logos/ferrari.png" alt="Ferrari">
+        <h2>Ferrari</h2>
+      </a>
+
+
+      <a href="porsche.html" class="brand-card">
+        <img src="proyectos/logos/porsche.jpg" alt="Porsche">
+        <h2>Porsche</h2>
+      </a>
+
+       <a href="lamborghini.html" class="brand-card">
+        <img src="proyectos/logos/lamborghini.jpg" alt="Lamborghini">
+        <h2>Lamborghini</h2>
+      </a>
+
+      <a href="general.html" class="brand-card">
+        <img src="proyectos/logos/general.png" alt="general">
+        <h2>General</h2>
+      </a>
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    © <strong>Crs_Sptter</strong> — Fotografía de coches
+  </footer>
+</body>
+</html>

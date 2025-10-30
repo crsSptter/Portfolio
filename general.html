@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>General — Crs_Sptter</title>
+  <link rel="icon" href="indexphoto/logo.png" />
+  <style>
+    :root {
+      --bg:#0f1724;
+      --card:#0b1220;
+      --muted:#9aa4b2;
+      --accent:#ff6b35;
+      --radius:16px;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+
+    * { box-sizing:border-box }
+    body {
+      margin:0;
+      background:linear-gradient(180deg,var(--bg),#071022);
+      color:#e6eef6;
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+    }
+
+    header {
+      padding:28px 24px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+    .brand {
+      display:flex;
+      gap:12px;
+      align-items:center;
+    }
+
+    .logo {
+      width:56px;
+      height:56px;
+      border-radius:10px;
+      overflow:hidden;
+    }
+
+    .logo img {
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      border-radius:10px;
+    }
+
+    nav a {
+      color:var(--muted);
+      text-decoration:none;
+      margin-left:18px;
+      font-weight:600;
+    }
+
+    main {
+      flex:1;
+      padding:36px 24px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+    }
+
+    h1 {
+      font-size:clamp(28px,5vw,52px);
+      color:var(--accent);
+      margin:0;
+      text-align:center;
+    }
+
+    hr {
+      width:120px;
+      border:2px solid var(--accent);
+      margin:12px auto 36px auto;
+      border-radius:4px;
+    }
+
+    .gallery {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:18px;
+      max-width:1300px;
+      width:100%;
+    }
+
+    .gallery img {
+      width:100%;
+      display:block;
+      border:3px solid var(--accent);
+      border-radius:8px;
+      transition:transform 0.3s ease;
+      background:#071022;
+      cursor:pointer;
+      aspect-ratio:4/3;
+      object-fit:cover;
+    }
+
+    .gallery img:hover {
+      transform:scale(1.05);
+    }
+
+    footer {
+      padding:18px 24px;
+      border-top:1px solid rgba(255,255,255,0.02);
+      color:var(--muted);
+      font-size:0.95rem;
+      text-align:center;
+    }
+
+    /* LIGHTBOX */
+    .lightbox {
+      position:fixed;
+      z-index:9999;
+      top:0;left:0;
+      width:100%;height:100%;
+      background:rgba(0,0,0,0.9);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      opacity:0;
+      pointer-events:none;
+      transition: opacity 0.4s ease;
+    }
+
+    .lightbox img {
+      max-width:90%;
+      max-height:90%;
+      border-radius:12px;
+      border:3px solid var(--accent);
+      transform: scale(0.8);
+      opacity:0;
+      transition: all 0.4s ease;
+    }
+
+    .lightbox:target {
+      opacity:1;
+      pointer-events:auto;
+    }
+
+    .lightbox:target img {
+      transform: scale(1);
+      opacity:1;
+    }
+
+    .close {
+      position:absolute;
+      top:20px;
+      right:30px;
+      font-size:2rem;
+      color:#fff;
+      text-decoration:none;
+      font-weight:bold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo"><img src="indexphoto/logo.png" alt="Logo"></div>
+      <div>
+        <div style="font-weight:700">Crs_Sptter</div>
+        <div style="font-size:0.85rem;color:var(--muted);margin-top:2px">Fotógrafo automotriz</div>
+      </div>
+    </div>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="galeria.html">Galería</a>
+      <a href="contact.html">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>General</h1>
+    <hr />
+    <p style="color:var(--accent); font-size:0.9rem; text-align:center; margin-top:-20px; margin-bottom:28px;">
+      Haz click en una imagen para agrandarla
+    </p>
+
+    <div class="gallery">
+      <a href="#img1"><img src="proyectos/general/m2bocca.jpg" alt="BMW M2 Boca"></a>
+      <a href="#img2"><img src="proyectos/general/m2culo.jpg" alt="BMW M2 Culo"></a>
+      <a href="#img3"><img src="proyectos/general/m4.jpg" alt="BMW M4"></a>
+      <a href="#img4"><img src="proyectos/general/mercedesdelante.jpg" alt="Mercedes delante"></a>
+      <a href="#img5"><img src="proyectos/general/mercedesatras.jpg" alt="Mercedes atrás"></a>
+      <a href="#img6"><img src="proyectos/general/m4amarillo.jpg" alt="BMW M4 Amarillo"></a>
+      <a href="#img7"><img src="proyectos/general/gtr.jpg" alt="Nissan GTR"></a>
+      <a href="#img8"><img src="proyectos/general/srt.jpg" alt="Dodge SRT"></a>
+      <a href="#img9"><img src="proyectos/general/mustang.jpg" alt="Ford Mustang"></a>
+    </div>
+  </main>
+
+  <footer>
+    © <strong>Crs_Sptter</strong> — Fotografía de coches
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div id="img1" class="lightbox"><a href="#" class="close">&times;</a><img src="proyectos/general/m2bocca.jpg"></div>
+  <div id="img2" class="lightbox"><a href="#" class="close">&times;</a><img src="proyectos/general/m2culo.jpg"></div>
+  <div id="img3" class="lightbox"><a href="#" class="close">&times;</a><img src="proyectos/general/m4.jpg"></div>
+  <div id="img4" class="lightbox"><a href="#" class="close">&times;</a><img src="proyectos/general/mercedesdelante.jpg"></div>
+  <div id="img5" class="lightbox"><a href="#" class="close">&times;</a><img src="proyectos/general/mercedesatras.jpg"></div>
+  <div id="img6" class="lightbox"><a href="#" class="close">&times;</a><img src="proyectos/general/m4amarillo.jpg"></div>
+  <div id="img7" class="lightbox"><a href="#" class="close">&times;</a><img src="proyectos/general/gtr.jpg"></div>
+  <div id="img8" class="lightbox"><a href="#" class="close">&times;</a><img src="proyectos/general/srt.jpg"></div>
+  <div id="img9" class="lightbox"><a href="#" class="close">&times;</a><img src="proyectos/general/mustang.jpg"></div>
+</body>
+</html>
